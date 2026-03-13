@@ -1,0 +1,28 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+footer {
+  background-color: v.$dark-gray;
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    padding-block: 39px 60px;
+    @include m.breakpoint(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 30px 40px;
+    }
+    @include m.breakpoint(desktopxl) {
+      padding-block: 47px 92px;
+    }
+    .logo {
+      align-self: center;
+      margin: 0;
+      margin-bottom: 20px;
+      @include m.breakpoint(tablet) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

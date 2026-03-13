@@ -1,0 +1,18 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.tech-stack,
+.projects-imgs {
+  @include m.breakpoint(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tech-stack {
+  @include m.breakpoint(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 58px;
+    column-gap: 100px;
+  }
+}

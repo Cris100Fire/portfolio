@@ -1,0 +1,19 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+button.link {
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+a.link,
+button.link {
+  border-bottom: 2px solid v.$green;
+  padding-bottom: 10px;
+  &:hover {
+    color: v.$green;
+  }
+}

@@ -1,0 +1,71 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.projects {
+  &-content {
+    @include m.reset-list;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    @include m.breakpoint(tablet) {
+      margin-bottom: 60px;
+    }
+    @include m.breakpoint(desktopxl) {
+      margin-bottom: 80px;
+    }
+  }
+  &-imgs {
+    margin-bottom: 80px;
+    @include m.breakpoint(tablet) {
+      row-gap: 60px;
+      column-gap: 24px;
+      margin-bottom: 100px;
+    }
+    @include m.breakpoint(desktopxl) {
+      row-gap: 69px;
+      column-gap: 30px;
+    }
+    article {
+      margin-bottom: 40px;
+      figure.img {
+        margin-bottom: 20px;
+        position: relative;
+        .black-links {
+          display: none;
+          @include m.breakpoint(desktop) {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+          }
+        }
+        @include m.breakpoint(desktop) {
+          &:hover .black-links {
+            opacity: 1;
+          }
+        }
+      }
+      h3 {
+        font-size: 24px;
+        margin-bottom: 7px;
+      }
+      p {
+        margin-bottom: 20px;
+        span {
+          margin-inline: 18px 20px;
+        }
+      }
+      .links {
+        display: flex;
+        gap: 30px;
+        @include m.breakpoint(desktop) {
+          display: none;
+        }
+      }
+    }
+  }
+}

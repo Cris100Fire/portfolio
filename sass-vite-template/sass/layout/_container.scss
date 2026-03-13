@@ -1,0 +1,59 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.container {
+  padding-inline: 16px;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  @include m.breakpoint(tablet) {
+    padding: 29px 30px 0;
+    max-width: 768px;
+  }
+  @include m.breakpoint(tablethorizontal) {
+    padding: 33px 80px 0;
+    max-width: 1024px;
+  }
+  @include m.breakpoint(desktop) {
+    padding: 36px 120px 0;
+    max-width: 1200px;
+  }
+  @include m.breakpoint(desktopxl) {
+    padding: 39px 165px 0;
+    max-width: 1440px;
+  }
+}
+
+.logo {
+  width: 129px;
+  margin: 29px 22px 20px;
+  @include m.breakpoint(tablet) {
+    margin: 0;
+    width: 172px;
+  }
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  z-index: 2;
+  @include m.breakpoint(tablet) {
+    gap: 32px;
+  }
+  .social {
+    color: white;
+    transition: color 0.3s ease;
+    &:hover {
+      color: v.$green;
+    }
+    svg {
+      width: 19px;
+      height: 19px;
+      @include m.breakpoint(tablet) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

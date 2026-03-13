@@ -1,0 +1,59 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.header__container {
+  display: flex;
+  justify-content: center;
+  @include m.breakpoint(tablet) {
+    display: block;
+  }
+  .header-content {
+    background: linear-gradient(to bottom, transparent, v.$dark-gray);
+    @include m.breakpoint(tablet) {
+      background: transparent;
+      margin-bottom: 90px;
+    }
+    @include m.breakpoint(tablethorizontal) {
+      margin-bottom: 100px;
+    }
+    @include m.breakpoint(desktop) {
+      margin-bottom: 115px;
+    }
+    @include m.breakpoint(desktopxl) {
+      margin-bottom: 127px;
+    }
+    .rings-1 {
+      position: absolute;
+      top: 124px;
+      right: 200px;
+      @include m.breakpoint(tablet) {
+        top: 110px;
+        right: 500px;
+      }
+      @include m.breakpoint(tablethorizontal) {
+        top: 125px;
+        left: -70px;
+      }
+      @include m.breakpoint(desktop) {
+        top: 155px;
+        left: -50px;
+      }
+      @include m.breakpoint(desktopxl) {
+        top: 172px;
+        left: 5px;
+      }
+    }
+    .main-header {
+      @include m.breakpoint(tablet) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .social-media-icons {
+          @include m.breakpoint(desktop) {
+            padding-right: 29px;
+          }
+        }
+      }
+    }
+  }
+}

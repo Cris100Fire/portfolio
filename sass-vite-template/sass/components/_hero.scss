@@ -1,0 +1,123 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.hero {
+  text-align: center;
+  margin-bottom: 80px;
+  @include m.breakpoint(tablet) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    text-align: left;
+    margin-bottom: 60px;
+  }
+  @include m.breakpoint(desktopxl) {
+    margin-bottom: 219px;
+  }
+  h1 {
+    @include m.breakpoint(tablet) {
+      width: 90%;
+    }
+    @include m.breakpoint(tablethorizontal) {
+      width: 80%;
+    }
+    @include m.breakpoint(desktop) {
+      width: 70%;
+    }
+    @include m.breakpoint(desktopxl) {
+      width: 80%;
+    }
+    span.break {
+      @include m.breakpoint(tablet) {
+        display: block;
+      }
+      @include m.breakpoint(desktop) {
+        display: inline;
+      }
+    }
+    span.owner {
+      border-bottom: 4px solid v.$green;
+    }
+  }
+  p {
+    margin: 24px 0;
+    @include m.breakpoint(tablet) {
+      margin-block: 60px 34px;
+      width: 80%;
+    }
+    @include m.breakpoint(tablethorizontal) {
+      width: 60%;
+    }
+    @include m.breakpoint(desktop) {
+      width: 55%;
+    }
+    @include m.breakpoint(desktopxl) {
+      width: 45%;
+      margin-block: 43px 66px;
+    }
+  }
+  .imgs {
+    figure {
+      width: 174px;
+      margin-inline: auto;
+      background-color: v.$dark-gray;
+      .mobile {
+        padding-top: 49px;
+        margin-bottom: 40px;
+        position: relative;
+        @include m.breakpoint(tablet) {
+          display: none;
+        }
+      }
+    }
+    .tablet-img {
+      display: none;
+      @include m.breakpoint(tablet) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        @include m.breakpoint(desktop) {
+          display: none;
+        }
+      }
+    }
+    .main_man-img {
+      display: none;
+      @include m.breakpoint(desktop) {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        right: 120px;
+        width: 445px;
+        top: 0;
+        @include m.breakpoint(desktopxl) {
+          right: calc((100vw - 1440px) / 2 + 165px);
+        }
+      }
+    }
+  }
+  .circle {
+    position: relative;
+    img {
+      position: absolute;
+      bottom: 290px;
+      right: -80px;
+      @include m.breakpoint(tablet) {
+        top: 292px;
+        left: 680px;
+      }
+      @include m.breakpoint(tablethorizontal) {
+        left: 880px;
+        top: 275px;
+      }
+      @include m.breakpoint(desktop) {
+        left: 450px;
+      }
+      @include m.breakpoint(desktopxl) {
+        left: 600px;
+      }
+    }
+  }
+}

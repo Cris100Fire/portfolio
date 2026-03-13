@@ -1,0 +1,56 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.contact__form {
+  @include m.breakpoint(tablet) {
+    width: 65%;
+    margin-inline: auto;
+  }
+  @include m.breakpoint(desktop) {
+    width: 100%;
+  }
+  .contact__field {
+    margin-bottom: 32px;
+    input,
+    textarea {
+      border: none;
+      border-bottom: 1px solid white;
+      background-color: transparent;
+      color: white;
+      width: 100%;
+      padding: 0 0 16px 24px;
+      font-family: inherit;
+      font-size: 16px;
+      &:focus {
+        outline: none;
+      }
+      &:valid:not(:placeholder-shown) {
+        border-bottom: 1px solid v.$green;
+      }
+      &:invalid:not(:placeholder-shown) {
+        border-bottom: 1px solid #ff6f5b;
+      }
+      &::placeholder {
+        color: v.$light-gray;
+        opacity: 50%;
+      }
+    }
+    textarea {
+      padding-bottom: 80px;
+      resize: none;
+    }
+  }
+  .form-btn {
+    text-align: right;
+  }
+  span.message-error {
+    display: none;
+    color: #ff6f5b;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 5px;
+  }
+  input:invalid:not(:placeholder-shown) ~ .message-error {
+    display: block;
+  }
+}

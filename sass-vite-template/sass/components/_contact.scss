@@ -1,0 +1,52 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.contact {
+  background-color: v.$dark-gray;
+  position: relative;
+  &__container {
+    .contact__inner {
+      padding-block: 60px 87px;
+      border-bottom: 1px solid white;
+      position: relative;
+      @include m.breakpoint(desktop) {
+        display: flex;
+        gap: 160px;
+        padding-block: 84px 92px;
+      }
+      @include m.breakpoint(desktopxl) {
+        gap: 220px;
+      }
+      .contact__text {
+        text-align: center;
+        @include m.breakpoint(desktop) {
+          text-align: left;
+        }
+        p {
+          margin-block: 20px 50px;
+          @include m.breakpoint(tablet) {
+            margin-inline: auto;
+            width: 62%;
+          }
+          @include m.breakpoint(desktop) {
+            margin-inline: 0;
+            width: 100%;
+            margin-top: 36px;
+          }
+        }
+      }
+      .rings-contact {
+        position: absolute;
+        bottom: 90px;
+        right: 200px;
+        @include m.breakpoint(tablet) {
+          bottom: 20px;
+          left: -300px;
+        }
+        @include m.breakpoint(desktopxl) {
+          bottom: 50px;
+        }
+      }
+    }
+  }
+}
